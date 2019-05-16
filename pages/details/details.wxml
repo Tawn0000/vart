@@ -1,0 +1,58 @@
+<!--pages/details/details.wxml-->
+<view class="container">
+  <view>
+    <image src="{{pre_url}}{{exhibition.eImage}}" mode="aspectFill" alt="展览图" wx:if = "{{exhibition.eImage.length > 0}}"/>
+    <view>
+      <text class="showtitle">{{exhibition.eName}}</text>
+      <text class='showtime'>展览时间：{{exhibition.e_Begin_Date}}-{{exhibition.e_End_Date}}</text>
+      <text class='fee'>票价：{{exhibition.ePrice*100===0?"免费": "￥" + exhibition.ePrice}}</text>
+    </view>
+    <view class="hr"></view>
+  </view>
+
+  <view>
+    <text class='showconduct'>观展指南</text>
+    <text class='showaddr'>地址：{{exhibition.eAddress}}</text>
+    <text class='showopen'>开放时间：每周一至每周日 14：00-17：00</text>
+    <!-- <map></map> -->
+    <!-- <text>{{longitude}} {{latitude}} {{markers}} </> -->
+  <map  longitude="{{longitude}}" latitude=" {{latitude}}" markers="{{markers}}" scale="13"></map>
+
+    <view class="hr"></view>
+  </view>
+
+  <view class='infomore' wx-if='{{infomore}}'>
+    <!-- <image src="http://chn.bluenion.com/tess/upload/images/15/151/1518146185_Wwg.jpg" mode='aspectFit' /> -->
+    <image src="{{pre_url_description}}{{exhibition.eDescription}}" mode='widthFix' style='height:1000rpx' wx:if = "{{exhibition.eDescription.length > 0}}"/>
+  </view>
+  <view class='tapformore' bindtap='infomore'>{{infomore?"收 起":"展 开"}}</view>
+
+<view wx:for="{{comment}}" wx:key="comment.cId">
+  <view class="result">{{item.result}}</view>
+</view>
+<view style="text-align:center;font-size:14px;color:#ccc;margin-top:20px;width:100%;">评 论 区</view>
+<view wx:for="{{comment}}" wx:key="comment.cId" class="liuyanview">
+  <view class="headimg"><image src="{{item.headimg}}"></image></view>
+  <view class="nickname_liuyantext">
+    <view class="nickname">用户{{item.uId}} <view class="time">{{item.cDate}}</view></view>
+      <image src= '/images/grade/{{item.cGrade}}.png' width="50%"  height="50%"  mode='widthFix'/>
+    <view class="text">{{item.cContent}}</view>
+  </view>
+  <!-- 占位符 -->
+  <view style="width:100%;height:50px;"></view>
+</view>
+
+
+
+
+   
+      <!-- <image src='http://chn.bluenion.com/tess/upload/images/15/151/1518146185_Wwg.jpg' class="zan_img" wx:if="{{comment.is_like == 1}}"></image>
+      <image src='http://chn.bluenion.com/tess/upload/images/15/151/1518146185_Wwg.jpg' class="zan_img" wx:else></image> -->
+ 
+
+  <view class='remark' bindtap='remark'>
+    <text>点评</text>
+      <!-- <image src="/images/comment.png" mode='scaleToFill' /> -->
+    <!-- <image src = '/images/comment.png' mode = 'scaleToFill'></image> -->
+  </view>
+</view>

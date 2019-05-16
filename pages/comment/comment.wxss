@@ -1,0 +1,65 @@
+.comment1-description{
+  padding:30rpx 0;
+  display:flex;
+  flex-direction:row;
+}
+.stars{
+   /* display:flex;*/
+    width: 100%;
+    transform: scale(.5,.5);
+    height: 100rpx;
+    background-color:#e6e6e6;
+    position: relative
+}
+
+.on-1{
+    top:0%;
+    left:0%;
+    /* border:1vw solid #000; */
+    position: absolute
+}
+.on-2{
+    top:0%;
+    left:21%;
+    /* border:1vw solid #000; */
+    position: absolute
+}
+.on-3{
+    top:0%;
+    left:40%;
+    /* border:1vw solid #000; */
+    position: absolute
+}
+.on-4{
+    top:0%;
+    left:62%;
+    /* border:1vw solid #000; */
+    position: absolute
+}
+
+.on-5{
+    top:0%;
+    left:82%;
+    /* border:1vw solid #000; */
+    position: absolute
+}
+.weui-cells_after-title{
+  width: 92%;
+  margin:0 auto;
+  border:1px solid #ddd;
+}
+
+.btnSf{
+  width: 92%;
+  margin:30rpx auto;
+  
+}
+.btnSf button{
+    background: rgb(167, 173, 173);
+    color: #fff;
+}
+
+.btnSf button:active{
+  background: rgb(210, 212, 212);
+  color: #fff;
+}

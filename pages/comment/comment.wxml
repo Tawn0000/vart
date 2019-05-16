@@ -1,0 +1,27 @@
+
+<view class="container">
+  <view class="comment1-description">
+    <view class="stars">
+     <image src= '/images/grade/{{flag}}.png' mode='widthFix'>
+      <view class="on-1" bindtap="changeColor1"  style="width:16vw; height: 13vw;" > </view>
+      <view class="on-2" bindtap="changeColor2"  style="width:16vw; height: 13vw;" > </view>
+      <view class="on-3" bindtap="changeColor3"  style="width:17vw; height: 13vw;" > </view>
+      <view class="on-4" bindtap="changeColor4"  style="width:16vw; height: 13vw;" > </view>
+      <view class="on-5" bindtap="changeColor5"  style="width:16vw; height: 13vw;" > </view>
+      </image>
+    </view>
+  </view>
+<!--文本域  -->
+  <view class="weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" bindinput="bindTextAreaChange" placeholder="留下您宝贵的体验" style="height: 8em" value="{{info}}" maxlength="{{noteMaxLen}}" focus />
+        <view class="weui-textarea-counter">{{noteNowLen}}/{{noteMaxLen}}</view>
+      </view>
+    </view>
+  </view>
+<!--发布按钮  -->
+<view class="btnSf">
+<button bindtap="bindSubmit">发布</button>
+</view>
+</view>

@@ -1,0 +1,30 @@
+<!--pages/test/test.wxml-->
+<view class='container'>
+  <view class='avatar'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class='userId'>id:{{uId}}</text>
+    </block>
+  </view>
+
+  <view class='kits'>
+    <navigator url="/pages/history/history?uid={{uId}}" class="unikits">
+      <image src='../../images/personal/history.png' mode='aspectfit' style='width:64px;height:64px'></image>
+    </navigator>
+
+    <navigator url="/pages/experience/experience?uid={{uId}} " class="unikits">
+      <image src='../../images/personal/experience.png' mode='aspectfit' style='width:64px;height:64px'></image>
+    </navigator>
+
+    <navigator url="/pages/experience/experience?uid={{uId}} " class="unikits">
+      <image src='../../images/personal/collection.png' mode='aspectfit' style='width:64px;height:64px'></image>
+    </navigator>
+
+    <button  class="unikits" style='padding: 0' open-type='feedback'>
+      <image src='../../images/personal/feedback.png' mode='aspectfit' style='width:64px;height:64px' ></image>
+    </button>
+  
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/expresult/expresult.wxml-->
+<!-- <text>pages/expresult/expresult.wxml</text> -->
+
+ <!-- <image class = 'image' src="{{pre_url}}{{report_path}}" mode="widthFix" alt="预览图" wx:if="{{report_path.length>0}}"/>   -->
+
+ <image style="width: {{imagewidth}}px; height: {{imageheight}}px;"  src="{{pre_url}}{{report_path}}" mode="widthFix" bindload="imageLoad" bindtap="previewImage" wx:if="{{report_path.length>0}}"/> 

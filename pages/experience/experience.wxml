@@ -1,0 +1,16 @@
+<!--pages/experience/experience.wxml-->
+<view wx:for="{{experienced}}" >
+    <view class="unishow" >
+      <image class="preview" bindtap="navtodetails" id="{{item.eId}}" data-id="{{item.eId}}" src="{{pre_url}}{{item.eImage}}" mode="aspectFill" alt="预览图"/>
+      <view class="showinfo">
+        <text class="showtitle">{{item.eName}}</text>
+        <text class="showtime">{{item.eBeginDate}}|{{item.eAddress}} </text>
+        <button bindtap="navtoresult" class="expresult"  id="{{item.eId}}" data-id="{{item.eId}}">
+        <text>体验结果</text>
+      </button>
+        <!-- <view class="fee">
+        <text>{{item.ePrice*100===0?"免费":item.ePrice + "￥"}}</text>
+      </view> -->
+      </view>
+    </view>
+    </view>

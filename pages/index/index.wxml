@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="condition">
+  <view class="stopview" wx:if="{{flag==1}}">
+    <button bindtap="onstop" class="stopexp">停止体验</button>
+  </view>
+  <!-- <navigator class="locat iconfont icon-locate" url="/pages/locat/locat" open-type="navigate" >上海 -->
+  <view class="retailStore locat ">
+    <view class="cnaps  borderBottom iconfont icon-locate">
+      <text>定位： </text>
+      <text class='m-bbt'>{{province}} {{city}}</text>
+    </view>
+
+  </view>
+  <!-- </navigator> -->
+  <view class='select'>
+    <button>
+      <text catchtap='timeord'>时间</text> |
+      <text catchtap='priceord'>价格</text>
+    </button>
+
+  </view>
+</view>
+
+<view class="container">
+  <scroll-view scroll-y="true" class="list">
+
+    <!-- 3 -->
+    <view wx:for="{{item}}" wx:key='eId'>
+      <view class="unishow">
+        <image class="preview" bindtap="navtodetails" id="{{item.eId}}" data-id="{{item.eId}}" src="{{pre_url}}{{item.eImage}}" mode="scaleToFill" alt="预览图" wx:if="{{item.eImage.length > 0}}" />
+        <view class="showinfo">
+          <text class="showtitle">{{item.eName}}</text>
+          <text class="showtime">{{item.eDate}}|{{item.eAddress}} </text>
+          <button catchtap="onstart" class="startexp" id="{{item.eId}}" data-id="{{item.eId}}" capture-catch:tap="onstart">
+            <text>开始体验</text>
+          </button>
+          <view class="fee">
+            <text>{{item.ePrice*100===0?"免费":"￥" + item.ePrice }}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+</view>

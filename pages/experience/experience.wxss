@@ -1,0 +1,46 @@
+/* pages/experience/experience.wxss */
+.unishow{
+  display:flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  border: 1rpx solid beige;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: rgba(226, 226, 226, 0.938);
+  background-size: cover;
+  margin-top: 20rpx;
+  /* border-bottom: 1rpx solid #ccc; */
+  cursor: pointer;
+}
+.unishow .preview{
+  height:10em;
+  /* border-radius: 5%; */
+}
+.unishow .showinfo{
+  display: inline;
+  float: left;
+  margin-left: 10rpx;
+  margin-bottom: 15rpx;
+}
+.unishow .showinfo .showtitle{
+  display:block;
+  font-size: 35rpx;
+}
+.unishow .showinfo .showtime{
+  display:inline-block;
+  font-size: 25rpx;
+}
+
+.expresult{
+    display:block;
+  position: relative;
+  float: right;
+  font-size: 25rpx;
+  text-align:center;
+  border-radius: 1.5em;
+  background-color: black;
+  color: white;
+  padding:10rpx 20rpx;
+  margin-right: 30rpx;
+}

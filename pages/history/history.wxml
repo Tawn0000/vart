@@ -1,0 +1,10 @@
+<!--pages/history/history.wxml-->
+<view wx:for="{{history}}" >
+    <view class="unishow" bindtap="navtodetails" id="{{item.eId}}" data-id="{{item.eId}}">
+      <image class="preview" src="{{pre_url}}{{item.eImage}}" mode="aspectFill" alt="预览图"/>
+      <view class="showinfo">
+        <text class="showtitle">{{item.eName}}</text>
+        <text class="showtime">{{item.eBeginDate}}|{{item.eAddress}} </text>
+      </view>
+    </view>
+    </view>

@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/profile/profile",
+    "pages/index/index",
+    "pages/details/details",
+    "pages/locat/locat",
+    "pages/favor/favor",
+    "pages/comment/comment",
+    "pages/history/history",
+    "pages/experience/experience",
+    "pages/logs/logs",
+    "pages/expresult/expresult"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "VART线上美术馆",
+    "navigationBarTextStyle": "black",
+    "backgroundColorBottom": "#ffffff"
+  },
+  "tabBar": {
+    "color": "gray",
+    "selectedColor": "black",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabbar/tabbar_left_raw.png",
+        "selectedIconPath": "images/tabbar/tabbar_left_clicked.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "images/tabbar/tabbar_right_raw.png",
+        "selectedIconPath": "images/tabbar/tabbar_right_clicked.png"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于定位效果展示"
+    }
+  }
+}
