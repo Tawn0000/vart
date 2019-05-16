@@ -34,8 +34,10 @@
 <view wx:for="{{comment}}" wx:key="comment.cId" class="liuyanview">
   <view class="headimg"><image src="{{item.headimg}}"></image></view>
   <view class="nickname_liuyantext">
-    <view class="nickname">用户{{item.uId}} <view class="time">{{item.cDate}}</view></view>
-      <image src= '/images/grade/{{item.cGrade}}.png' width="50%"  height="50%"  mode='widthFix'/>
+    <view class="nickname">用户{{item.uId}} 
+     <image class = "grade" src= '/images/grade/{{item.cGrade}}.png'  mode='widthFix' wx:if = "{{item.cGrade != null}}"/>
+    <view class="time">{{item.cDate}}</view></view>
+     
     <view class="text">{{item.cContent}}</view>
   </view>
   <!-- 占位符 -->

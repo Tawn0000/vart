@@ -68,7 +68,13 @@
   font-size: 15px;
   color: #999;
 }
-
+.grade{
+    width: 40%;
+    transform: scale(.46,.46);
+    height: 70vw;
+    background-color:#e6e6e6;
+    position: relative 
+}
 .nickname_liuyantext .nickname .time{
   font-size: 11px;
   color: #999;

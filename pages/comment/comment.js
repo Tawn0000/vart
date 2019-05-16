@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    flag: 0,
+    flag: 3,
     noteMaxLen: 300, // 最多放多少字
     info: "",
     noteNowLen: 0,//备注当前字数
