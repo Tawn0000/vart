@@ -39,8 +39,8 @@ Page({
     ],
     user_area_uuid: '',
     user_state: '',
-    start_time: new Date(),
-    end_time: new Date(),
+    start_time: null,
+    end_time: null,
     user_close_distance: Infinity,
   },
 
@@ -149,7 +149,7 @@ Page({
                           // 此时用户离开这个展区
                           if (that.data.user_area_uuid != array_uuid[min_distance_index]) {
                             console.log("用户所在展区" + area_id);
-                            that.data.user_area_uuid = array_uuid[min_distance_index];
+                           
                             that.data.user_state = '';
                             that.data.end_time = new Date();
                             console.log("ddd" + that.data.start_time);
@@ -168,14 +168,12 @@ Page({
                               },
                               success: res => {
                                 console.log("用户驻留信息发送成功");
-
-
+                                that.data.user_area_uuid = array_uuid[min_distance_index];
                               }
-                            })
+                            });
+                            that.data.start_time = new Date();
 
                           }
-
-
                         } else {
                           that.data.user_state = 'enter';
                           that.data.start_time = new Date();
@@ -322,9 +320,32 @@ Page({
     })
   },
   onstop: function () {
-    console.log("onstop:" + app.globalData.url + '/curation/personal/end?uid=' + app.globalData.UId + '&eid=' + this.data.cur_eid);
-
+    console.log("onstop:" + app.globalData.url + '/curation/personal/end?uid=' + app.globalData.UId + '&eid=' + this.data.cur_eid + "flag : " + this.data.flag);
+    var that = this;
+    var eid = that.data.cur_eid;
     if (this.data.flag == 1) {
+
+      if (that.data.user_area_uuid != '') {
+        wx.request({
+          url: app.globalData.url + '/curation/personal/record/',
+          method: "POST",
+          data: {
+            uid: app.globalData.UId,
+            eid: eid,
+            begin: that.data.start_time,
+            end: new Date(),
+            uuid: that.data.user_area_uuid,
+          },
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          success: res => {
+            console.log("用户驻留信息发送成功");
+
+
+          }
+        })
+      };
       wx.request({
         url: app.globalData.url + '/curation/personal/end?uid=' + app.globalData.UId + '&eid=' + this.data.cur_eid,
         success: res => {
@@ -339,11 +360,15 @@ Page({
           console.log("关闭设备监测")
         }
       })
-      this.setData({
+      that.setData({
         flag: 0,
-        cur_eid: null
+        cur_eid: null,
+        uuid:'',
+        user_state:'',
+        start_time:null,
+        end_time:null
       })
-    }
+    };
   },
   navtodetails: function (e) {
 
@@ -390,5 +415,6 @@ Page({
       }
     }
     return maxElement;
-  }
+  },
+
 })
