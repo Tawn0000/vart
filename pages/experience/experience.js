@@ -25,12 +25,12 @@ Page({
       success: res => {
         console.log("success:" + JSON.stringify(res))
         that.setData({
-          experienced: res.data.data.Experienced
+          experienced: res.data.Experienced
         })
         //console.log(that.data.experienced)
       },
       fail: res => {
-        console.log("fail:" + JSON.stringify(res))
+       // console.log("fail:" + JSON.stringify(res))
       }
     })
   },
@@ -90,10 +90,10 @@ Page({
     wx.navigateTo({
       url: '../details/details?eId=' + e.currentTarget.id,
       success: res => {
-        console.log("success " + JSON.stringify(res))
+       // console.log("success " + JSON.stringify(res))
       },
       fail: function (res) {
-        console.log("fail " + JSON.stringify(res))
+        //console.log("fail " + JSON.stringify(res))
       },
     })
   }
@@ -105,10 +105,10 @@ Page({
     wx.navigateTo({
       url: '../expresult/expresult?eid=' + e.currentTarget.id+'&uid='+uid,//这里应该是结果页
       success: res => {
-        console.log("success " + JSON.stringify(res))
+       // console.log("success " + JSON.stringify(res))
       },
       fail: function (res) {
-        console.log("fail " + JSON.stringify(res))
+       // console.log("fail " + JSON.stringify(res))
       },
     })
   }

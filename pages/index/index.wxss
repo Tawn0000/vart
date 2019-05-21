@@ -46,7 +46,11 @@ page{
   cursor: pointer;
 }
 .unishow .preview{
-  height:10em;
+ height:10em;
+ width:20em;
+ display:flex;                  
+ justify-content: center; 
+ align-items:center; 
   /* border-radius: 5%; */
 }
 .unishow .showinfo{

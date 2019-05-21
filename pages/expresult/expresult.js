@@ -102,7 +102,7 @@ Page({
 
     //console.log("fafafa: " + this.data.pre_url + this.data.report_path)
     this.data.imgalist.push(this.data.pre_url + this.data.report_path);
-    console.log("aaaa" + this.data.imgalist);
+    //console.log("aaaa" + this.data.imgalist);
 
     wx.previewImage({
       current: this.data.pre_url+this.data.report_path, // 当前显示图片的http链接   
@@ -113,8 +113,8 @@ Page({
     wx.getImageInfo({// 获取图片信息（此处可不要）
       src: this.data.pre_url + this.data.report_path,
       success: function (res) {
-        console.log(res.width)
-        console.log(res.height)
+      //  console.log(res.width)
+        //console.log(res.height)
       }
     })
 

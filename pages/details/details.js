@@ -54,16 +54,16 @@ Page({
     wx.request({
       url: app.globalData.url + '/curation/exhibition/detail?uid=' + app.globalData.UId +'&eid='+options.eId,
       success:res=>{
-        console.log("success:"+JSON.stringify(res))
+        //console.log("success:"+JSON.stringify(res))
         
         that.setData({
           exhibition: res.data.exhibition,
            comment:res.data.comment,
         })
-        console.log(that.data.pre_url+that.data.exhibition.eImage)
+        //console.log(that.data.pre_url+that.data.exhibition.eImage)
       },
       fail:res=>{
-        console.log("fail:" + JSON.stringify(res))
+      //  console.log("fail:" + JSON.stringify(res))
       }
     }),
     wx.getLocation({
@@ -71,7 +71,7 @@ Page({
       success: function (res) {
         var latitude = res.latitude;
         var longitude = res.longitude;
-        console.log(res.latitude+" " + res.longitude);
+        //console.log(res.latitude+" " + res.longitude);
         that.setData({
           latitude: res.latitude,
           longitude: res.longitude,
@@ -147,15 +147,15 @@ Page({
       wx.request({
       url: app.globalData.url + '/curation/exhibition/detail?uid=' + app.globalData.UId + '&eid=' + that.data.exhibition.eId,
         success: res => {
-          console.log("success:" + JSON.stringify(res))
+         // console.log("success:" + JSON.stringify(res))
 
           that.setData({
             comment: res.data.comment,
           })
-          console.log(that.data.comment)
+        //  console.log(that.data.comment)
         },
         fail: res => {
-          console.log("fail:" + JSON.stringify(res))
+        //  console.log("fail:" + JSON.stringify(res))
         }
       })
   },
@@ -208,7 +208,7 @@ Page({
         that.setData({
           talks: message
         })
-        console.log("点赞成功", res);
+       // console.log("点赞成功", res);
 
       },
       complete: function (res) {

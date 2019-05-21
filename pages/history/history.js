@@ -16,17 +16,17 @@ Page({
   onLoad: function (options) {
     var that = this
     var uid = options.uid
-    console.log("接收：" + uid)
+    //console.log("接收：" + uid)
     wx.request({
       url: app.globalData.url + '/curation/personal/history?id=' + uid,
       success: res => {
-        console.log("success:" + JSON.stringify(res))
+      //  console.log("success:" + JSON.stringify(res))
         that.setData({
           history: res.data
         })
       },
       fail: res => {
-        console.log("fail:" + JSON.stringify(res))
+        //console.log("fail:" + JSON.stringify(res))
       }
     })
   },
@@ -85,10 +85,10 @@ Page({
     wx.navigateTo({
       url: '../details/details?eId=' + e.currentTarget.id,
       success: res => {
-        console.log("success " + JSON.stringify(res))
+       // console.log("success " + JSON.stringify(res))
       },
       fail: function (res) {
-        console.log("fail " + JSON.stringify(res))
+        //console.log("fail " + JSON.stringify(res))
       },
     })
   }

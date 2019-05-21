@@ -7,6 +7,13 @@
   padding: 5rpx 5rpx;
   /* position: fixed; */
 }
+.preview{
+ height:10em;
+ width:20em;
+ display:flex;                  
+ justify-content: center; 
+ align-items:center; 
+}
 .showtitle,.showconduct{
   display: block;
   font-size: 35rpx;

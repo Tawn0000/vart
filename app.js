@@ -8,7 +8,7 @@ App({
     //url:  'http://localhost:8082',
     //url:'https://www.zhouchen1998.xyz:8082',
     //url: 'http://122.152.204.226:8082'
-    url: 'https://shop.leju315.com:8082'
+    url: 'https://shop.leju315.com'
   },
   onLaunch: function () {//onLaunch 生命周期函数--监听小程序初始化（全局触发一次）
     // 展示本地存储能力

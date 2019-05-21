@@ -1,7 +1,7 @@
 <!--pages/details/details.wxml-->
 <view class="container">
   <view>
-    <image src="{{pre_url}}{{exhibition.eImage}}" mode="aspectFill" alt="展览图" wx:if = "{{exhibition.eImage.length > 0}}"/>
+    <image class = "preview" src="{{pre_url}}{{exhibition.eImage}}" mode="aspectFill" alt="展览图" wx:if = "{{exhibition.eImage.length > 0}}"/>
     <view>
       <text class="showtitle">{{exhibition.eName}}</text>
       <text class='showtime'>展览时间：{{exhibition.e_Begin_Date}}-{{exhibition.e_End_Date}}</text>
